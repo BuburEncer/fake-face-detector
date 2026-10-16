@@ -77,15 +77,14 @@ Split stratifikasi berdasarkan label. Split: 20% test dulu, lalu 12.5% dari sisa
 
 ## Demo Interaktif
 
-Folder `demo/` berisi Gradio app untuk klasifikasi foto wajah (upload gambar → label Real/AI-Generated + probabilitas).
+App Streamlit untuk klasifikasi foto wajah: upload gambar → label Real/AI-Generated + probabilitas. 3 model pilihan (EfficientNet-B0, ViT-Base/16, ResNet-50), weight dimuat dari Hugging Face hub.
 
 ```bash
-cd demo
 pip install -r requirements.txt
-python app.py
+streamlit run app.py
 ```
 
-Deploy ke Hugging Face Spaces: ikuti [demo/README.md](demo/README.md).
+Deploy ke Streamlit Community Cloud (gratis): push repo GitHub, hubungkan di streamlit.io.
 
 ## Struktur Notebook
 

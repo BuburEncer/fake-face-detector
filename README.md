@@ -11,23 +11,23 @@ Proyek UAS Computer Vision: klasifikasi citra wajah AI-generated vs citra asli m
 
 ## Arsitektur Model
 
-| Parameter | Nilai |
-|---|---|
-| Model | ViT-Base/16 (`vit_base_patch16_224`) |
-| Pretrained | ImageNet-21k |
-| Patch size | 16×16 (grid 14×14, 196 patch) |
-| Hidden dim | 768 |
-| Attention heads | 12 |
-| Encoder layers | 12 |
-| Classification head | `nn.Linear(768, 2)` |
+| Parameter           | Nilai                                |
+| ------------------- | ------------------------------------ |
+| Model               | ViT-Base/16 (`vit_base_patch16_224`) |
+| Pretrained          | ImageNet-21k                         |
+| Patch size          | 16×16 (grid 14×14, 196 patch)        |
+| Hidden dim          | 768                                  |
+| Attention heads     | 12                                   |
+| Encoder layers      | 12                                   |
+| Classification head | `nn.Linear(768, 2)`                  |
 
 ## Pembagian Data
 
 | Split | Proporsi | Ukuran |
-|---|---|---|
-| Train | 70% | 10.500 |
-| Val | 10% | 1.500 |
-| Test | 20% | 3.000 |
+| ----- | -------- | ------ |
+| Train | 70%      | 10.500 |
+| Val   | 10%      | 1.500  |
+| Test  | 20%      | 3.000  |
 
 Split stratifikasi berdasarkan label. Split: 20% test dulu, lalu 12.5% dari sisanya untuk val.
 
@@ -41,15 +41,15 @@ Split stratifikasi berdasarkan label. Split: 20% test dulu, lalu 12.5% dari sisa
 
 ## Hyperparameter
 
-| Konfigurasi | Nilai |
-|---|---|
-| Optimizer | AdamW |
-| Learning rate | 4e-5 |
-| Weight decay | 0.01 |
-| Loss | CrossEntropyLoss dengan label smoothing 0.1 |
-| Scheduler | CosineAnnealingLR (T_max=25, eta_min=1e-6) |
-| Max epochs | 25 |
-| Early stopping | patience=3 (berdasarkan val_loss) |
+| Konfigurasi    | Nilai                                       |
+| -------------- | ------------------------------------------- |
+| Optimizer      | AdamW                                       |
+| Learning rate  | 4e-5                                        |
+| Weight decay   | 0.01                                        |
+| Loss           | CrossEntropyLoss dengan label smoothing 0.1 |
+| Scheduler      | CosineAnnealingLR (T_max=25, eta_min=1e-6)  |
+| Max epochs     | 25                                          |
+| Early stopping | patience=3 (berdasarkan val_loss)           |
 
 ## Metodologi
 
@@ -64,6 +64,28 @@ Split stratifikasi berdasarkan label. Split: 20% test dulu, lalu 12.5% dari sisa
 9. **Robustness Testing** — JPEG compression (Q=90..10), variasi resolusi (192..64), Gaussian noise (σ=0.01..0.20) pada 300 sampel test
 10. **Attention Rollout** — heatmap fokus model
 11. **Ringkasan Akhir**
+
+## Hasil Evaluasi (Test Set)
+
+| Metrik | Nilai |
+|---|---|
+| Accuracy | 98.73% |
+| Precision | 99.26% |
+| Recall | 98.20% |
+| F1-Score | 98.73% |
+| AUC-ROC | 99.86% |
+
+## Demo Interaktif
+
+Folder `demo/` berisi Gradio app untuk klasifikasi foto wajah (upload gambar → label Real/AI-Generated + probabilitas).
+
+```bash
+cd demo
+pip install -r requirements.txt
+python app.py
+```
+
+Deploy ke Hugging Face Spaces: ikuti [demo/README.md](demo/README.md).
 
 ## Struktur Notebook
 

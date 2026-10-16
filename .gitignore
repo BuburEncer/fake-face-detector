@@ -1,0 +1,7 @@
+# Model weights — besar, download ulang via Kaggle CLI
+demo/*.pth
+
+# Cache & env
+__pycache__/
+*.pyc
+.env

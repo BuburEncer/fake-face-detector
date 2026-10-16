@@ -7,7 +7,7 @@ Demo: klasifikasi foto wajah Real vs AI-Generated dengan ViT-Base/16.
 `best_vit_model.pth` (327MB) sudah di folder ini, didownload via Kaggle CLI:
 
 ```bash
-kaggle kernels output muhammadnabilrafasya/real-or-fake-faces-with-vit -p demo
+kaggle kernels output ibnuqayyim/real-or-fake-faces-with-vit -p demo
 ```
 
 ```

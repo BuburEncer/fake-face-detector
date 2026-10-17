@@ -69,11 +69,11 @@ Split stratifikasi berdasarkan label. Split: 20% test dulu, lalu 12.5% dari sisa
 
 | Metrik | Nilai |
 |---|---|
-| Accuracy | 98.73% |
-| Precision | 99.26% |
-| Recall | 98.20% |
-| F1-Score | 98.73% |
-| AUC-ROC | 99.86% |
+| Accuracy | 99.23% |
+| Precision | 99.00% |
+| Recall | 99.47% |
+| F1-Score | 99.24% |
+| AUC-ROC | 99.96% |
 
 ## Demo Interaktif
 

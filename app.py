@@ -54,7 +54,7 @@ st.set_page_config(page_title="Deteksi Wajah AI vs Real", page_icon="🕵️")
 st.title("🕵️ Deteksi Wajah AI-Generated vs Real")
 st.markdown(
     "Model **ViT-Base/16** dilatih pada dataset 140K Real vs Fake Faces "
-    "(15.000 subset) mencapai **98.73% akurasi**. Unggah foto wajah untuk diuji."
+    "(15.000 subset) mencapai **99.23% akurasi**. Unggah foto wajah untuk diuji."
 )
 
 model_key = st.sidebar.selectbox("Pilih model", list(MODELS.keys()))
